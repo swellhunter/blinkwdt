@@ -1,4 +1,4 @@
-# blinkwdt
+# blinkwdt - For ATtiny85 Watch Dog Timer Reset.
 
 It's not what you think. 
 This is not a WDIE example of a Watch Dog Timer Interrupt being used to toggle a LED in a non-blocking manner.
