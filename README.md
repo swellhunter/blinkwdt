@@ -23,7 +23,9 @@ I was previously led to believe that this should not be happening, and the devic
 
 So I really cannot see the difference between using the WDT for a forced reboot after an intentional stall and :
 
+```
 SP    = RAMEND;
 MCUSR = 0;
 SREG  = 0;
 asm("RJMP 0"); 
+```
