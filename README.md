@@ -29,3 +29,9 @@ MCUSR = 0;
 SREG  = 0;
 asm("RJMP 0"); 
 ```
+
+The ATtiny25/45/85 MCU's do not have a CCP register. The ATtiny10 does, bizarrely the signature is also 0xD8, and there are 4 clock cycles to make changes, during which interrupts are ignored. (Check this).
+
+They dont have a a WDTCSR either, it is a WDTCR, and as evidenced by this program it is not particularly protected during an enable. One punch is enough.
+
+To do : set it up for 2s, wait half a second, and change it to 8s, to test if two punches are required for a "change".
