@@ -15,3 +15,15 @@ I am using Spence Konde's ATTinyCore : https://github.com/SpenceKonde/ATTinyCore
 A possible (destructive) enhancement would be to increment the WDTO value, storing it in EEPROM between boots.
 
 It works in any case.
+
+As an observation, the state of the output pin is apparently preserved through a WDT reboot.
+I was previously led to believe that this should not be happening, and the device should run through a stage of resetting such things to default initialised values.
+
+(Although traditionally this did not even happen for the stack pointer, and this is a recent enhancement on newer devices.).
+
+So I really cannot see the difference between using the WDT for a forced reboot after an intentional stall and :
+
+SP    = RAMEND;
+MCUSR = 0;
+SREG  = 0;
+asm("RJMP 0"); 
