@@ -1,5 +1,7 @@
 # blinkwdt - For ATtiny85 Watch Dog Timer Reset.
 
+(Edit: Yes I am aware this has been fixed for later versions of the Arduino IDE, but the files distrubuted with Atmel Studio 7 are still crap).
+
 It's not what you think. 
 This is not a WDIE example of a Watch Dog Timer Interrupt being used to toggle a LED in a non-blocking manner.
 
